@@ -1,6 +1,7 @@
 # compression-dictionary-transport-threejs-demo
 
 # instructions
+download chrome canary or dev
 install node and npm <br>
 go into public folder <br>
 node server.js <br>

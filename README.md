@@ -11,12 +11,13 @@ then <br>
 http://localhost:55987/demo.html?r=152 <br>
 go to network tab to check (go from 151 KB to 5 KB) <br>
 
-Demo site: https://compression-dictionary-transport-threejs-demo.glitch.me/
+
 
 # more detailed instructions
 # 📦 Compression Dictionary Transport Demo
 
 Demo site: [compression-dictionary-transport-threejs-demo.glitch.me](https://compression-dictionary-transport-threejs-demo.glitch.me/)
+(UPDATE: THE WEBSITE NO LONGER LOADS, SO RUN IT LOCALLY WITH INSTRUCTIONS BELOW)
 
 This demo showcases how shared compression dictionaries (e.g., Brotli) can drastically reduce transfer sizes — from **151KB to 5KB** — using Chrome's experimental compression features.
 
@@ -32,3 +33,34 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 source ~/.bashrc
 nvm install --lts
 nvm use --lts
+
+
+
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+cd YOUR_REPO_NAME/public
+
+# Run the local server
+node server.js
+
+# Or use a static server as fallback:
+npx http-server -p 55987
+
+/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary \
+--enable-features=CompressionDictionaryTransport \
+--origin-trial-disabled-features=CompressionDictionaryTransport
+
+first go to
+http://localhost:55987/demo.html?r=151
+
+then
+http://localhost:55987/demo.html?r=152
+
+6. Inspect Compression in DevTools
+Open DevTools > Network tab
+Reload both pages
+Observe file sizes:
+Page	Transfer Size
+First Load (r=151)	~151 KB
+Second Load (r=152)	~5 KB ✅ (compressed using shared dictionary)
+
+

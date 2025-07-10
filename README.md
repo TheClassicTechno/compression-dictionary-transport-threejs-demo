@@ -65,4 +65,8 @@ Page	Transfer Size
 First Load (r=151)	~151 KB
 Second Load (r=152)	~5 KB ✅ (compressed using shared dictionary)
 
+7. to open website on ios with roots:
+run ifconfig, get ethernet IP of computer, then type into safari on iphone: ethernetIP:58116/demo.html?r=151
+
+
 

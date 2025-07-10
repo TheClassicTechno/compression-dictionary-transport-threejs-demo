@@ -41,6 +41,8 @@ cd YOUR_REPO_NAME/public
 
 # Run the local server
 node server.js
+for this terminal will output Your app is listening on http://0.0.0.0:58116
+so go to http://localhost:58116/demo.html?r=151
 
 # Or use a static server as fallback:
 npx http-server -p 55987
@@ -50,7 +52,7 @@ npx http-server -p 55987
 --origin-trial-disabled-features=CompressionDictionaryTransport
 
 first go to
-http://localhost:55987/demo.html?r=151
+http://localhost:55987/demo.html?r=151 (replace the 5 digit number with what u see on terminal)
 
 then
 http://localhost:55987/demo.html?r=152

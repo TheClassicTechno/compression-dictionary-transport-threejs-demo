@@ -8,9 +8,16 @@
       }
       function getRevision() {
         const revisionString = new URL(location.href).searchParams.get('r');
+        // Support both old numeric format and new version names
+        if (revisionString === 'version1' || revisionString === 'version2' || revisionString === 'version3') {
+          return revisionString;
+        }
+        // Fallback for old numeric format or invalid input
         const parsed = parseInt(revisionString, 10);
-        if (isNaN(parsed)) { return 153; }
-        return parsed;
+        if (!isNaN(parsed)) {
+          return `version${parsed}`;
+        }
+        return 'version3'; // default fallback
       }
       const revision = getRevision();
       const moduleUrl = new URL(`js/${revision}.js`, location.href);

@@ -28,15 +28,15 @@
       Open DevTools (Windows: F12 key, Mac: Command + Option + I), and select the Network tab.
     </li>
     <li>
-      Go to <a href="/demo.html?r=151">demo.html?r=151</a>
+      Go to <a href="/demo.html?r=version1">demo.html?r=version1</a>
       <ul>
-        <li>This page is using Three.js (revision 151).</li>
-        <li>You can see "191kB" in the network column of "151.js".</li>
+        <li>This page is using Three.js (revision version1).</li>
+        <li>You can see "191kB" in the network column of "version1.js".</li>
         <li>The file is compressed using normal Brotli (1,198,641 bytes =&gt; 190,163 bytes) </li>
         <li>
-          When you click "151.js", you can see this new response header:
+          When you click "version1.js", you can see this new response header:
           <pre>Use-As-Dictionary: match="/js/*"</pre>
-          This response header means that the content of "151.js" can be used as a shared dictionary for fetching
+          This response header means that the content of "version1.js" can be used as a shared dictionary for fetching
           resources under "/js/".
         </li>
         <li>In <a href="chrome://net-internals/#sharedDictionary">chrome://net-internals/#sharedDictionary</a>, you can
@@ -44,14 +44,14 @@
       </ul>
     </li>
     <li>
-      Go to <a href="/demo.html?r=152">demo.html?r=152</a>
+      Go to <a href="/demo.html?r=version2">demo.html?r=version2</a>
       <ul>
-        <li>This page is using Three.js (revision 152).</li>
-        <li>You can see "5.9 KB" in the network column of "152.js".</li>
-        <li>This is compressed using Shared Brotli using the content of "151.js" as a dictionary. The original size of
-          "152.js" is 1,208,641 bytes. And the compressed data size is 5,612bytes.</li>
+        <li>This page is using Three.js (revision version2).</li>
+        <li>You can see "5.9 KB" in the network column of "version2.js".</li>
+        <li>This is compressed using Shared Brotli using the content of "version1.js" as a dictionary. The original size of
+          "version2.js" is 1,208,641 bytes. And the compressed data size is 5,612bytes.</li>
         <li>
-          When you click "152.js", you can see this new request header:
+          When you click "version2.js", you can see this new request header:
           <pre>Available-Dictionary: :epjv6NymTtsZ63DPEBkyCVCh7ZlGicsjTPkBUvSQ9G4=:</pre>
           Also you can see new "br-d" and "zstd-d" Accept-Encoding types:
           <pre>Accept-Encoding: gzip, deflate, br, zstd, br-d, zstd-d</pre>
@@ -65,19 +65,19 @@
         <li>
           Also, the response header contains the "Use-As-Dictionary" header.
           <pre>Use-As-Dictionary: match="/js/*"</pre>
-          So the content of "152.js" will be used as a shared dictionary for fetching resources under "/js/".
+          So the content of "version2.js" will be used as a shared dictionary for fetching resources under "/js/".
         </li>
         <li>In <a href="chrome://net-internals/#sharedDictionary">chrome://net-internals/#sharedDictionary</a>, you can
           see the updated dictionary information.</li>
       </ul>
     </li>
     <li>
-      Go to <a href="/demo.html?r=153">/demo.html?r=153</a>
+      Go to <a href="/demo.html?r=version3">/demo.html?r=version3</a>
       <ul>
-        <li>This page is using Three.js (revision 153).</li>
-        <li>You can see "4.3 KB" in the network column of "153.js".</li>
-        <li>This is compressed using Shared Brotli using the content of "152.js" as a dictionary. The original size of
-          "153.js" is 1,223,960 bytes. And the compressed data size is 4,077 bytes.</li>
+        <li>This page is using Three.js (revision version3).</li>
+        <li>You can see "4.3 KB" in the network column of "version3.js".</li>
+        <li>This is compressed using Shared Brotli using the content of "version2.js" as a dictionary. The original size of
+          "version3.js" is 1,223,960 bytes. And the compressed data size is 4,077 bytes.</li>
         <li>In <a href="chrome://net-internals/#sharedDictionary">chrome://net-internals/#sharedDictionary</a>, you can
           see the updated dictionary information.</li>
       </ul>

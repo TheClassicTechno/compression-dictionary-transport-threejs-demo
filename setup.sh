@@ -24,39 +24,39 @@ cd ../../
 mkdir three_js
 cd three_js
 
-curl https://unpkg.com/three@0.151.0/build/three.module.js -o 151.js
-curl https://unpkg.com/three@0.152.0/build/three.module.js -o 152.js
-curl https://unpkg.com/three@0.153.0/build/three.module.js -o 153.js
+curl https://unpkg.com/three@0.version1.0/build/three.module.js -o version1.js
+curl https://unpkg.com/three@0.version2.0/build/three.module.js -o version2.js
+curl https://unpkg.com/three@0.version3.0/build/three.module.js -o version3.js
 
-../brotli/bazel-bin/brotli 151.js -o 151.js.br
-../brotli/bazel-bin/brotli 152.js -o 152.js.br
-../brotli/bazel-bin/brotli 153.js -o 153.js.br
-../brotli/bazel-bin/brotli 151.js -D 151.js -o 151-151.js.sbr
-../brotli/bazel-bin/brotli 152.js -D 151.js -o 151-152.js.sbr
-../brotli/bazel-bin/brotli 153.js -D 151.js -o 151-153.js.sbr
-../brotli/bazel-bin/brotli 151.js -D 152.js -o 152-151.js.sbr
-../brotli/bazel-bin/brotli 152.js -D 152.js -o 152-152.js.sbr
-../brotli/bazel-bin/brotli 153.js -D 152.js -o 152-153.js.sbr
-../brotli/bazel-bin/brotli 151.js -D 153.js -o 153-151.js.sbr
-../brotli/bazel-bin/brotli 152.js -D 153.js -o 153-152.js.sbr
-../brotli/bazel-bin/brotli 153.js -D 153.js -o 153-153.js.sbr
+../brotli/bazel-bin/brotli version1.js -o version1.js.br
+../brotli/bazel-bin/brotli version2.js -o version2.js.br
+../brotli/bazel-bin/brotli version3.js -o version3.js.br
+../brotli/bazel-bin/brotli version1.js -D version1.js -o version1-version1.js.sbr
+../brotli/bazel-bin/brotli version2.js -D version1.js -o version1-version2.js.sbr
+../brotli/bazel-bin/brotli version3.js -D version1.js -o version1-version3.js.sbr
+../brotli/bazel-bin/brotli version1.js -D version2.js -o version2-version1.js.sbr
+../brotli/bazel-bin/brotli version2.js -D version2.js -o version2-version2.js.sbr
+../brotli/bazel-bin/brotli version3.js -D version2.js -o version2-version3.js.sbr
+../brotli/bazel-bin/brotli version1.js -D version3.js -o version3-version1.js.sbr
+../brotli/bazel-bin/brotli version2.js -D version3.js -o version3-version2.js.sbr
+../brotli/bazel-bin/brotli version3.js -D version3.js -o version3-version3.js.sbr
 
-zstd 152.js -D 151.js -19 -o 151-152.js.szst
-zstd 153.js -D 151.js -19 -o 151-153.js.szst
-zstd 151.js -D 152.js -19 -o 152-151.js.szst
-zstd 153.js -D 152.js -19 -o 152-153.js.szst
-zstd 151.js -D 153.js -19 -o 153-151.js.szst
-zstd 152.js -D 153.js -19 -o 153-152.js.szst
+zstd version2.js -D version1.js -19 -o version1-version2.js.szst
+zstd version3.js -D version1.js -19 -o version1-version3.js.szst
+zstd version1.js -D version2.js -19 -o version2-version1.js.szst
+zstd version3.js -D version2.js -19 -o version2-version3.js.szst
+zstd version1.js -D version3.js -19 -o version3-version1.js.szst
+zstd version2.js -D version3.js -19 -o version3-version2.js.szst
 
-cp 151.js 151.js_
-cp 152.js 152.js_
-cp 153.js 153.js_
-zstd 151.js -D 151.js_ -19 -o 151-151.js.szst
-zstd 152.js -D 152.js_ -19 -o 152-152.js.szst
-zstd 153.js -D 153.js_ -19 -o 153-153.js.szst
-rm 151.js_
-rm 152.js_
-rm 153.js_
+cp version1.js version1.js_
+cp version2.js version2.js_
+cp version3.js version3.js_
+zstd version1.js -D version1.js_ -19 -o version1-version1.js.szst
+zstd version2.js -D version2.js_ -19 -o version2-version2.js.szst
+zstd version3.js -D version3.js_ -19 -o version3-version3.js.szst
+rm version1.js_
+rm version2.js_
+rm version3.js_
 
 npm install
 

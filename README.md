@@ -105,3 +105,150 @@ To open the website on iOS with roots:
    ```
    169.254.63.208:58116/demo.html?r=151
    ```
+
+
+
+Chrome canary headers for 151.js expected:
+equest URL
+http://localhost:50133/js/151.js
+Request Method
+GET
+Status Code
+200 OK
+Remote Address
+127.0.0.1:50133
+Referrer Policy
+strict-origin-when-cross-origin
+
+Response headers
+ache-control
+public, max-age=1000
+connection
+keep-alive
+content-encoding
+br
+content-length
+190163
+content-type
+application/javascript; charset=utf-8
+date
+Thu, 31 Jul 2025 22:25:32 GMT
+keep-alive
+timeout=72
+use-as-dictionary
+match="/js/*"
+vary
+sec-available-dictionary, available-dictionary
+
+
+and request headers
+accept
+*/*
+accept-encoding
+gzip, deflate, br, zstd
+accept-language
+en-US,en;q=0.9
+cache-control
+no-cache
+connection
+keep-alive
+host
+localhost:50133
+origin
+http://localhost:50133
+pragma
+no-cache
+referer
+http://localhost:50133/demo.html?r=151
+sec-ch-ua
+"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"
+sec-ch-ua-mobile
+?0
+sec-ch-ua-platform
+"macOS"
+sec-fetch-dest
+script
+sec-fetch-mode
+cors
+sec-fetch-site
+same-origin
+user-agent
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+
+
+and for 152.js:
+Request URL
+http://localhost:50133/js/152.js
+Request Method
+GET
+Status Code
+200 OK
+Remote Address
+127.0.0.1:50133
+Referrer Policy
+strict-origin-when-cross-origin
+
+reepsones headers
+ache-control
+public, max-age=1000
+connection
+keep-alive
+content-dictionary
+:epjv6NymTtsZ63DPEBkyCVCh7ZlGicsjTPkBUvSQ9G4=:
+content-encoding
+dcz
+content-length
+5652
+content-type
+application/javascript; charset=utf-8
+date
+Thu, 31 Jul 2025 22:27:00 GMT
+keep-alive
+timeout=72
+use-as-dictionary
+match="/js/*"
+vary
+sec-available-dictionary, available-dictionary
+
+
+
+and requesrt headers:
+accept
+*/*
+accept-encoding
+gzip, deflate, br, zstd, dcb, dcz
+accept-language
+en-US,en;q=0.9
+available-dictionary
+:epjv6NymTtsZ63DPEBkyCVCh7ZlGicsjTPkBUvSQ9G4=:
+cache-control
+no-cache
+connection
+keep-alive
+host
+localhost:50133
+origin
+http://localhost:50133
+pragma
+no-cache
+referer
+http://localhost:50133/demo.html?r=152
+sec-ch-ua
+"Chromium";v="140", "Not=A?Brand";v="24", "Google Chrome";v="140"
+sec-ch-ua-mobile
+?0
+sec-ch-ua-platform
+"macOS"
+sec-fetch-dest
+script
+sec-fetch-mode
+cors
+sec-fetch-site
+same-origin
+user-agent
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36
+
+
+
+
+
